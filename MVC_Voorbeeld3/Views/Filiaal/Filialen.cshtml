@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Filialen";
+}
+
+<h2>Filialen</h2>
+<ul>
+    @foreach (var filiaal in Model)
+    {
+        <li>@filiaal.ID @filiaal.Naam @MyHelpers.Milieuscore(@filiaal.Gebouwd) @filiaal.Gebouwd @filiaal.Waarde</li>
+    }
+</ul>
+
