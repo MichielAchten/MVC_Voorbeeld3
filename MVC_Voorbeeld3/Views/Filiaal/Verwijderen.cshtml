@@ -1,0 +1,11 @@
+﻿@using MVC_Voorbeeld3.Models
+@model Filiaal
+
+@{
+    ViewBag.Title = "Verwijderen";
+}
+    <h2>@Model.Naam vervijderen?</h2>
+    <form method="post" action="~/Filiaal/Delete/@Model.ID">
+        <input type="submit" value="Delete" />
+    </form>
+

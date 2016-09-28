@@ -17,12 +17,23 @@ namespace MVC_Voorbeeld3.Services
             filialen[3] = new Filiaal { ID = 3, Naam = "Haasrode", Gebouwd = new DateTime(1976, 1, 1), Waarde = 1000000, Eigenaar = Eigenaar.Eigendom };
             filialen[4] = new Filiaal { ID = 4, Naam = "Wevelgem", Gebouwd = new DateTime(1981, 1, 1), Waarde = 1600000, Eigenaar = Eigenaar.Eigendom };
             filialen[5] = new Filiaal { ID = 5, Naam = "Genk", Gebouwd = new DateTime(1990, 1, 1), Waarde = 4000000, Eigenaar = Eigenaar.Eigendom };
+            filialen[6] = new Filiaal { ID = 6, Naam = "testFiliaal", Gebouwd = new DateTime(1992), Waarde = 500000, Eigenaar = Eigenaar.Eigendom };
         }
 
         public List<Filiaal> FindAll()
         {
             //levert enkel de values op van de dictionary
             return filialen.Values.ToList();
+        }
+
+        public Filiaal Read(int id)
+        {
+            return filialen[id];
+        }
+
+        public void Delete(int id)
+        {
+            filialen.Remove(id);
         }
     }
 }
