@@ -242,6 +242,7 @@
     <Content Include="Views\Filiaal\Filialen.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\sterretjes.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Eigenaar.cshtml" />
+    <Content Include="Views\Home\Wissen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
