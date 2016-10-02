@@ -1,0 +1,38 @@
+﻿@model List<MVC_Voorbeeld3.Models.Persoon>
+@{
+    ViewBag.Title = "Personen";
+}
+<h2>Personen</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Voornaam</th>
+            <th>Achternaam</th>
+            <th>Score</th>
+            <th>Wedde</th>
+            <th>Paswoord</th>
+            <th>Geboren</th>
+            <th>Gehuwd</th>
+            <th>Opmerkingen</th>
+            <th>Geslacht</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var persoon in Model)
+        {
+            <tr>
+                <td>@persoon.ID</td>
+                <td>@persoon.Voornaam</td>
+                <td>@persoon.Achternaam</td>
+                <td>@persoon.Score</td>
+                <td>@Html.DisplayFor(m => persoon.Wedde)</td>
+                <td>@persoon.Paswoord</td>
+                <td>@Html.DisplayFor(m => persoon.Geboren)</td>
+                <td>@persoon.Gehuwd</td>
+                <td>@persoon.Opmerkingen</td>
+                <td>@persoon.Geslacht</td>
+            </tr>
+        }
+    </tbody>
+</table>

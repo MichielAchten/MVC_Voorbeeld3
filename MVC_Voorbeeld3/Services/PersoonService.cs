@@ -1,0 +1,85 @@
+﻿using MVC_Voorbeeld3.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace MVC_Voorbeeld3.Services
+{
+    public class PersoonService
+    {
+        private static Dictionary<int, Persoon> personen = new Dictionary<int, Persoon>
+        {
+            {
+                1, new Persoon
+                {
+                    ID = 1,
+                    Voornaam = "Jesse",
+                    Achternaam = "James",
+                    Score = 5,
+                    Wedde = 1000,
+                    Paswoord = "123",
+                    Geboren = new DateTime(1966,1,1),
+                    Gehuwd = false,
+                    Opmerkingen = "Schurk van het WildeWesten",
+                    Geslacht = Geslacht.Man
+                }
+            },
+            {
+                2, new Persoon
+                {
+                    ID = 2,
+                    Voornaam = "Jane",
+                    Achternaam = "Calamity",
+                    Score = 4,
+                    Wedde = 2000,
+                    Paswoord = "123",
+                    Geboren = new DateTime(1966,2,2),
+                    Gehuwd = false,
+                    Opmerkingen = "Martha Jane Cannery",
+                    Geslacht = Geslacht.Vrouw
+                }
+            },
+            {
+                3, new Persoon
+                {
+                    ID = 3,
+                    Voornaam = "Billy",
+                    Achternaam = "The Kid",
+                    Score = 5,
+                    Wedde = 3000,
+                    Paswoord = "123",
+                    Geboren = new DateTime(1966,3,3),
+                    Gehuwd = false,
+                    Opmerkingen = "Revolverheld",
+                    Geslacht = Geslacht.Man
+                }
+            },
+            {
+                4, new Persoon
+                {
+                    ID = 4,
+                    Voornaam = "Sarah",
+                    Achternaam = "Bernhardt",
+                    Score = 3,
+                    Wedde = 4000,
+                    Paswoord = "123",
+                    Geboren = new DateTime(1966,4,4),
+                    Gehuwd = false,
+                    Opmerkingen = "Rosine Bernardt",
+                    Geslacht = Geslacht.Vrouw
+                }
+            }
+        };
+
+        public List<Persoon> FindAll()
+        {
+            return personen.Values.ToList();
+        }
+
+        public Persoon FindById(int id)
+        {
+            return personen[id];
+        }
+    }
+}
