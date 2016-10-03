@@ -22,3 +22,43 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Tabelopmaak class zebra */
+table.zebra, table.zebra td, table.zebra.th {
+    border: 1px solid silver;
+    border-collapse: collapse;
+}
+
+    table.zebra thead {
+        color: white;
+        background-color: gray;
+    }
+
+    table.zebra tbody tr:nth-child(even) {
+        background-color: #DDDDDD;
+    }
+
+/* intput opmaak */
+input {
+    display:block;
+    margin-bottom:10px;
+}
+
+/* validation helpers */
+.field-validation-error{
+    color: #ff0000;
+}
+.field-validation-valid{
+    display: none;
+}
+.input-validation-error{
+    border: 1px solid #ff0000;
+    background-color:#ffeeee;
+}
+.validation-summary-errors{
+    font-weight: bold;
+    color:#ff0000;
+}
+.validation-summary-valid{
+    display:none;
+}

@@ -10,7 +10,7 @@ namespace MVC_Voorbeeld3.Models
     {
         public int ID { get; set; }
         public string Voornaam { get; set; }
-        public string Achternaam { get; set; }
+        public string Familienaam { get; set; }
         public int Score { get; set; }
         [DisplayFormat(DataFormatString = "{0:#,##0.00}")]
         public decimal Wedde { get; set; }

@@ -15,13 +15,13 @@ namespace MVC_Voorbeeld3.Services
                 {
                     ID = 1,
                     Voornaam = "Jesse",
-                    Achternaam = "James",
+                    Familienaam = "James",
                     Score = 5,
                     Wedde = 1000,
                     Paswoord = "123",
                     Geboren = new DateTime(1966,1,1),
                     Gehuwd = false,
-                    Opmerkingen = "Schurk van het WildeWesten",
+                    Opmerkingen = "Schurk van het Wilde Westen",
                     Geslacht = Geslacht.Man
                 }
             },
@@ -30,7 +30,7 @@ namespace MVC_Voorbeeld3.Services
                 {
                     ID = 2,
                     Voornaam = "Jane",
-                    Achternaam = "Calamity",
+                    Familienaam = "Calamity",
                     Score = 4,
                     Wedde = 2000,
                     Paswoord = "123",
@@ -45,7 +45,7 @@ namespace MVC_Voorbeeld3.Services
                 {
                     ID = 3,
                     Voornaam = "Billy",
-                    Achternaam = "The Kid",
+                    Familienaam = "The Kid",
                     Score = 5,
                     Wedde = 3000,
                     Paswoord = "123",
@@ -60,7 +60,7 @@ namespace MVC_Voorbeeld3.Services
                 {
                     ID = 4,
                     Voornaam = "Sarah",
-                    Achternaam = "Bernhardt",
+                    Familienaam = "Bernhardt",
                     Score = 3,
                     Wedde = 4000,
                     Paswoord = "123",
@@ -80,6 +80,27 @@ namespace MVC_Voorbeeld3.Services
         public Persoon FindById(int id)
         {
             return personen[id];
+        }
+
+        public void Delete(int id)
+        {
+            personen.Remove(id);
+        }
+
+        public void Opslag(decimal vanWedde, decimal totWedde, decimal percentage)
+        {
+            foreach (var p in (from persoon in personen.Values where persoon.Wedde >= vanWedde && persoon.Wedde <= totWedde select persoon))
+            {
+                p.Wedde += p.Wedde * percentage / 100;
+            }
+        }
+
+        public List<Persoon> VanTotWedde(decimal van, decimal tot)
+        {
+            return (from persoon in personen.Values
+                    where persoon.Wedde >= van && persoon.Wedde <= tot
+                    orderby persoon.Wedde
+                    select persoon).ToList();
         }
     }
 }
