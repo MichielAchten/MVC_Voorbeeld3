@@ -90,5 +90,19 @@ namespace MVC_Voorbeeld3.Controllers
             persoon.Geslacht = Geslacht.Vrouw;
             return View(persoon);
         }
+
+        [HttpPost]
+        public ActionResult Toevoegen(Persoon p)
+        {
+            if (this.ModelState.IsValid)
+            {
+                persoonService.Add(p);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(p);
+            }
+        }
     }
 }

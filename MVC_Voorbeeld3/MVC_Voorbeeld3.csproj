@@ -188,6 +188,7 @@
     <Compile Include="Services\HoofdZetelService.cs" />
     <Compile Include="Services\PersoonService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ValidationAttributes\VerledenAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -212,6 +213,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jqueryFixes.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -263,6 +265,8 @@
     <Content Include="Views\Persoon\VerwijderForm.cshtml" />
     <Content Include="Views\Persoon\Opslag.cshtml" />
     <Content Include="Views\Persoon\VanTotWedde.cshtml" />
+    <Content Include="Views\Persoon\Toevoegen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Geslacht.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

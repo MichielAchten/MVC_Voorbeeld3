@@ -44,6 +44,19 @@ input {
     margin-bottom:10px;
 }
 
+input, textarea{
+    display:block;
+    margin-bottom:10px;
+}
+input[type='checkbox'], input[type='radio']{
+    display:inline;
+}
+
+input, textarea, select{
+    display: block;
+    margin-bottom:10px;
+}
+
 /* validation helpers */
 .field-validation-error{
     color: #ff0000;
